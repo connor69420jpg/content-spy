@@ -165,8 +165,7 @@ function save(){try{localStorage.setItem("cspy3",JSON.stringify({tok:S.tok,data:
 function fmt(n){return n>=1e6?(n/1e6).toFixed(1)+"M":n>=1e3?(n/1e3).toFixed(1)+"K":""+n}
 function fmtD(d){try{return new Date(d+"T00:00:00").toLocaleDateString("en-US",{month:"short",day:"numeric"})}catch(e){return d}}
 function rng(s){return()=>{s=(s*16807)%2147483647;return(s-1)/2147483646}}
-let _tt;function toast(m,d){S.toast=m;render();clearTimeout(_tt);_tt=setTimeout(()=>{S.toast=null;render()},d||15
-                                                                              000)}
+let _tt;function toast(m,d){S.toast=m;render();clearTimeout(_tt);_tt=setTimeout(()=>{S.toast=null;render()},d||15000)}
 
 function mock(ar,pl,dy){
   const r=rng(ar.r*1e3+dy+(pl==="tiktok"?5e3:0)),o=[],ty=pl==="instagram"?["Reel","Carousel","Photo"]:["Video","Duet"],
